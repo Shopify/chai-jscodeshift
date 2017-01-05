@@ -1,5 +1,7 @@
 # chai-jscodeshift
 
+[![Circle CI](https://circleci.com/gh/Shopify/chai-jscodeshift.svg?style=svg)](https://circleci.com/gh/Shopify/chai-jscodeshift)
+
 **chai-jscodeshift** provides a custom assertion for [jscodeshift](https://github.com/facebook/jscodeshift) to check whether a given input fixture matches an output fixture after being transformed by the transformer under test.
 
 ## Setup
