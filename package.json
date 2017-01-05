@@ -4,11 +4,11 @@
   "description": "Chai assertion utilities for writing JSCodeShift Codemods.",
   "main": "index.js",
   "scripts": {
-    "test": "../../node_modules/.bin/mocha 'test/**/*.test.js' --compilers js:babel-core/register",
+    "test": "mocha 'test/**/*.test.js' --compilers js:babel-core/register",
     "test:watch": "npm run test -- --watch --reporter min",
-    "test:cover": "../../node_modules/.bin/babel-node ../../node_modules/.bin/isparta cover --reporter text --reporter html ../../node_modules/.bin/_mocha -- --reporter spec test/**/*.test.js",
+    "test:cover": "babel-node node_modules/.bin/isparta cover --report text --report html _mocha -- --reporter spec test/**/*.test.js",
     "clean": "rm -rf lib/",
-    "build:lib": "../../node_modules/.bin/babel src --out-dir lib",
+    "build:lib": "babel src --out-dir lib",
     "build": "npm run clean && npm run build:lib",
     "preversion": "npm run build"
   },
@@ -28,15 +28,35 @@
     }
   },
   "author": {
-    "name": "Chris Sauve",
-    "email": "chris.sauve@shopify.com"
+    "name": "Shopify",
+    "email": "dev@shopify.com"
+  },
+  "babel": {
+    "presets": [
+      "shopify"
+    ]
   },
   "bugs": {
-    "url": "https://github.com/Shopify/javascript/issues"
+    "url": "https://github.com/Shopify/chai-jscodeshift/issues"
   },
-  "homepage": "https://github.com/Shopify/javascript/tree/master/packages/chai-jscodeshift",
-  "repository": "https://github.com/Shopify/javascript/tree/master/packages/chai-jscodeshift",
+  "homepage": "https://github.com/Shopify/chai-jscodeshift",
+  "repository": "https://github.com/Shopify/chai-jscodeshift",
   "license": "MIT",
+  "devDependencies": {
+    "babel-preset-shopify": "15.0.1",
+    "babel-cli": "6.x",
+    "babel-core": "6.x",
+    "chai": "3.x",
+    "eslint": "3.10.x",
+    "eslint-plugin-shopify": "15.1.0",
+    "isparta": "4.x",
+    "istanbul": "0.4.4",
+    "jscodeshift": "0.x",
+    "mocha": "3.x",
+    "proxyquire": "1.x",
+    "sinon": "1.x",
+    "sinon-chai": "2.x"
+  },
   "peerDependencies": {
     "jscodeshift": ">=0.3.0",
     "chai": ">=1.9.2"
