@@ -1,0 +1,6 @@
+.eslintignore
+*.log
+
+coverage
+shipit.yml
+test
