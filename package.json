@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "check": "yarn run lint && yarn test",
-    "deploy": "npm publish",
     "lint": "eslint . --max-warnings 0",
     "test": "mocha 'test/**/*.test.js' --compilers js:babel-core/register",
     "test:watch": "yarn test -- --watch --reporter min",
